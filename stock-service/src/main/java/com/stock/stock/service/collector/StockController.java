@@ -17,24 +17,30 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/service/stock")
+@RequestMapping("/stock")
 public class StockController {
 
     @Autowired
     RestTemplate restTemplate;
 
     @GetMapping("/{username}")
-    public List<Stock> getStock(@PathVariable("username") final String userName) {
-
+    public List<String> getStock(@PathVariable("username") final String userName) {
+        //String dbHostUrl = "http://api/db-service/data/" + userName;
+        String dbHostUrl = "http://db-service/data/" + userName;
+        //String dbHostUrl = "http://localhost:7002/api/db-service/data/" + userName;
         ResponseEntity<List<String>> quoteResponse = restTemplate
-                .exchange("http://localhost:7000/api/service/db/" + userName,
-                        HttpMethod.GET,null, new ParameterizedTypeReference<List<String>>() { });
+                .exchange(dbHostUrl, HttpMethod.GET,null, new ParameterizedTypeReference<List<String>>() { });
 
         List<String> quotes = quoteResponse.getBody();
         return quotes
                 .stream()
-                .map(this::getStockPrice)
-                .collect(Collectors.toList());
+                .map(quote -> {
+                    Stock stock = getStockPrice(quote);
+                    if (null == stock) {
+                        return "0.00 $";
+                    }
+                    return stock.getCurrency();
+                }).collect(Collectors.toList());
     }
 
     private Stock getStockPrice(String quote) {
@@ -42,7 +48,7 @@ public class StockController {
             return YahooFinance.get(quote);
         } catch (IOException e) {
             //e.printStackTrace();
-            return new Stock("INTC");
+            return null;
         }
     }
 }

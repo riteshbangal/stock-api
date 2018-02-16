@@ -1,5 +1,5 @@
 server:
-  context-path: /api
+  #context-path: /eureka
   port: 7002
 
 management:
@@ -9,3 +9,21 @@ management:
 spring:
   application:
     name: eureka-service
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    db-service:
+      path: /db-service/**
+      url: http://localhost:7000
+    stock-service:
+      path: /stock-service/**
+      url: http://localhost:7001
