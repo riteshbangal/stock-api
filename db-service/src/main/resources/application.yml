@@ -1,0 +1,23 @@
+server:
+  context-path: /stock
+  port: 7000
+
+management:
+  port: 7071
+  security.enabled: false
+
+spring:
+  application:
+    name: db-service
+
+  datasource:
+      url: jdbc:mysql://localhost:3306/test
+      username: root
+      password: mysql
+      hibernate:
+        ddl-auto: update
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
