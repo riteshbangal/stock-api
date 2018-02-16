@@ -14,13 +14,12 @@ Developing a stock-api micro-services using multiple technology stack.
 ## Architecture Diagram:
 ![Architecture](design/architecture.png)
 
+# Actual URL:
+####  DB: http://localhost:7000/data/rcb
+#### Stock: http://localhost:7001/stock/rcb
+
 # Proxy URL
 #### Eureka: http://localhost:7002/
 
 #### DB: http://localhost:7002/api/db-service/data/rcb/
 #### Stock: http://localhost:7002/api/stock-service/stock/rcb/
-
-## Normal:
-####  DB: http://localhost:7000/data/rcb
-#### Stock: http://localhost:7001/stock/rcb
-
