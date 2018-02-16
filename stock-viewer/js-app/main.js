@@ -14,7 +14,7 @@ function getStockPriceDetails(e) {
   //const url = 'https://randomuser.me/api/?results=2';
   var result = "";
 
-  fetch(url, {mode: 'cors'})
+  fetch(url, {mode: 'no-cors'})
     //.then((response) => response.json())
     .then(function(response) {
       console.log('Request successful. Response: ', response);
