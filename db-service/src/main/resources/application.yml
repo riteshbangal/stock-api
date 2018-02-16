@@ -1,9 +1,9 @@
 server:
-  context-path: /stock
+  context-path: /api
   port: 7000
 
 management:
-  port: 7071
+  port: 7070
   security.enabled: false
 
 spring:

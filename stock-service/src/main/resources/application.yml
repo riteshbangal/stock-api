@@ -1,0 +1,16 @@
+server:
+  context-path: /api
+  port: 7001
+
+management:
+  port: 7071
+  security.enabled: false
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8302/eureka/
+  instance:
+    hostname: localhost
