@@ -6,6 +6,10 @@ management:
   port: 7071
   security.enabled: false
 
+spring:
+  application:
+    name: stock-service
+
 eureka:
   client:
     registerWithEureka: true
