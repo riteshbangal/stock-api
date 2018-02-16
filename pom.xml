@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stock.api</groupId>
+    <artifactId>stock-api-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+ 
+    <name>Stock API - Parent Project</name>
+    <url>http://maven.apache.org</url>
+ 
+    <!-- Includes following modules for build a micro-services api -->
+    <modules>
+        <module>db-api</module>
+        <module>stock-service</module>
+        <module>eureka-service</module>
+        <module>stock-viewer</module>
+    </modules>
+
+    <properties>
+        <licensing.skip>true</licensing.skip>
+        <jdk.version>1.8</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+        <!-- JUnit for all extended modules -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.jmock</groupId>
+            <artifactId>jmock-junit4</artifactId>
+            <scope>test</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+    </dependencies>
+ 
+</project>
