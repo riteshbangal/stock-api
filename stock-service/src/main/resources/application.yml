@@ -1,5 +1,5 @@
 server:
-  #context-path: /stock
+  context-path: /stock
   port: 7001
 
 management:

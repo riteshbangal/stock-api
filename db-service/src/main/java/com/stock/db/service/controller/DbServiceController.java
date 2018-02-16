@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/data")
+@RequestMapping("/")
 public class DbServiceController {
 
     private QuoteRepository quoteRepository;

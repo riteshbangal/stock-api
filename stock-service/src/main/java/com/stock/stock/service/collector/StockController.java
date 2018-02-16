@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/stock")
+@RequestMapping("/")
 public class StockController {
 
     @Autowired

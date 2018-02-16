@@ -1,5 +1,5 @@
 server:
-  #context-path: /data
+  context-path: /data
   port: 7000
 
 management:
