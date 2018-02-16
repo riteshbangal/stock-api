@@ -1,0 +1,5 @@
+First Time:
+npm install -g live-server
+
+Every Time:
+live-server
