@@ -21,9 +21,13 @@ public class DbServiceController {
         this.quoteRepository = quoteRepository;
     }
 
-    @GetMapping
-    public String welcome() {
-        return "Hi! Welcome to Stock Portal.";
+    @GetMapping("/user/{username}")
+    public String checkUser(@PathVariable("username") final String username) {
+        List<Quote> quotes = quoteRepository.findByUserName(username);
+        if (null == quotes || quotes.isEmpty()) {
+            return "No user found.";
+        }
+        return "Hi " + username + "! Welcome to Stock Portal.";
     }
 
     @GetMapping("/{username}")
