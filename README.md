@@ -10,6 +10,11 @@ In this Part, we covered the below microservices:s
 Developing a stock-api micro-services using multiple technology stack.
 - `Java 8` - Language used to write backend business logic
 - `Spring` - Used spring framework for backend
+- `Microservices` - Design Pattern using the Discovery Service
+- `Spring Cloud Eureka`
+- `Hystrix` - Circuit breakers
+- `Zuul` - API Gateway/Proxy
+
 
 ## Architecture Diagram:
 ![Architecture](design/architecture.png)

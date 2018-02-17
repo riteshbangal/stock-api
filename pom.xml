@@ -16,7 +16,7 @@
         <module>db-service</module>
         <module>stock-service</module>
         <module>eureka-service</module>
-        <module>stock-viewer</module>
+        <module>zuul-service</module>
     </modules>
 
     <properties>
