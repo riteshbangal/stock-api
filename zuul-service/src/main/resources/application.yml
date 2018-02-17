@@ -18,3 +18,15 @@ eureka:
       defaultZone: http://localhost:7002/eureka/
   instance:
     hostname: localhost
+
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    db-service:
+      path: /db-service/**
+      serviceId: DB-SERVICE
+      #url: http://localhost:7000
+    stock-service:
+      path: /stock-service/**
+      serviceId: STOCK-SERVICE
