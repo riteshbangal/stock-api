@@ -30,3 +30,4 @@ zuul:
     stock-service:
       path: /stock-service/**
       serviceId: STOCK-SERVICE
+      #url: http://localhost:7001
