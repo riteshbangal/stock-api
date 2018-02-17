@@ -20,16 +20,17 @@ Developing a stock-api micro-services using multiple technology stack.
 ![Architecture](design/architecture.png)
 
 # Actual URL:
-#### DB: http://localhost:7000/data/rcb
-#### Stock: http://localhost:7001/stock/rcb
+#### DB: http://localhost:7000/data/user/rcb
+#### Stock: http://localhost:7001/stock/welcome/rcb
 
 # Proxy URL
-#### Zuul: localhost:7003/zuul/api/db-service/data/user/rcb
+#### Zuul: http://localhost:7003/zuul/api/db-service/data/user/rcb
+#### Zuul: http://localhost:7003/zuul/api/stock-service/stock/welcome/rcb
 
-#### Eureka: http://localhost:7002/
+#### Eureka: http://localhost:7002
 
-#### DB: http://localhost:7002/api/db-service/data/rcb/
-#### Stock: http://localhost:7002/api/stock-service/stock/rcb/
+#### DB: http://localhost:7002/api/db-service/data/user/rcb
+#### Stock: http://localhost:7002/api/stock-service/stock/welcome/rcb
 
-
-Reference: [Tech Primers](https://www.youtube.com/watch?v=-luHIZJ6or0&list=PLTyWtrsGknYdZlO7LAZFEElWkEk59Y2ak)
+# Reference
+[Tech Primers](https://www.youtube.com/watch?v=-luHIZJ6or0&list=PLTyWtrsGknYdZlO7LAZFEElWkEk59Y2ak)
